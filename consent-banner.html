@@ -6,6 +6,11 @@
     <title>Document</title>
 
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             height: 100vh;
             width: 100vw;
@@ -17,19 +22,27 @@
         #opt-out--container {
             display: flex;
             flex-wrap: wrap;
-            width: 100%;
+            width: 100vw;
             align-self: bottom;
-            padding: 10px 30px;
+            padding: 10px 0;
             position: absolute;
             left: 0;
             bottom: 0;
-            background-color: aqua;
+            place-content: center center;
+            background-color: #fff;
             z-index: 200;
 
         }
 
         #opt-out--text {
             max-width: 60%;
+            vertical-align: middle;
+            padding: 20px;
+        }
+
+        #opt-out--btn-container {
+            display: flex;
+            max-width: 40%;
             vertical-align: middle;
             padding: 10px 20px;
         }
@@ -39,11 +52,16 @@
             max-height: 40px;
             padding: 10px 20px;
             margin: 10px;
-            background-color: blue;
+            background-color: #3f3f3f;
             border: 1px solid black;
-            border-radius: 0.5rem;
             text-align: center;
+            color: #fff;
             text-transform: uppercase;
+            transition: all 0.1s linear;
+        }
+
+        .opt-out--button:hover {
+            background-color: #2a2a2a;
         }
     </style>
 </head>
@@ -51,8 +69,10 @@
 
     <div id="opt-out--container">
         <div id="opt-out--text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos quibusdam sapiente suscipit laboriosam magni cupiditate, atque illo dolorem. Magnam aliquid quis facilis sint ullam nemo fuga, corrupti libero voluptatibus tenetur.</div>
-        <div id="opt-out--acceptbtn" class="opt-out--button">accept</div>
-        <div id="opt-out--declinebtn" class="opt-out--button">decline</div>
+        <div id="opt-out--btn-container">
+            <div id="opt-out--acceptbtn" class="opt-out--button">accept</div>
+            <div id="opt-out--declinebtn" class="opt-out--button">decline</div>
+        </div>
     </div>
 
 
