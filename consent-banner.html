@@ -9,21 +9,29 @@
         body {
             height: 100vh;
             width: 100vw;
+            background-color: black;
             overflow: hidden;
+            position: relative;
         }
 
         #opt-out--container {
             display: flex;
             flex-wrap: wrap;
             width: 100%;
-
-            position:fixed;
             align-self: bottom;
+            padding: 10px 30px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background-color: aqua;
+            z-index: 200;
 
         }
 
         #opt-out--text {
             max-width: 60%;
+            vertical-align: middle;
+            padding: 10px 20px;
         }
 
         #opt-out--acceptbtn {
@@ -35,7 +43,15 @@
         }
 
         .opt-out--button {
-            width: 150px;
+            width: 200px;
+            max-height: 40px;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: blue;
+            border: 1px solid black;
+            border-radius: 0.5rem;
+            text-align: center;
+            text-transform: uppercase;
         }
     </style>
 </head>
@@ -43,8 +59,8 @@
 
     <div id="opt-out--container">
         <div id="opt-out--text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos quibusdam sapiente suscipit laboriosam magni cupiditate, atque illo dolorem. Magnam aliquid quis facilis sint ullam nemo fuga, corrupti libero voluptatibus tenetur.</div>
-        <div id="opt-out--acceptbtn" class="opt-out--button"><button>accept</button></div>
-        <div id="opt-out--declinebtn" class="opt-out--button"><button>decline</button></div>
+        <div id="opt-out--acceptbtn" class="opt-out--button">accept</div>
+        <div id="opt-out--declinebtn" class="opt-out--button">decline</div>
     </div>
 
 
