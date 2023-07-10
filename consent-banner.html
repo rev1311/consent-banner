@@ -43,7 +43,7 @@
         #opt-out--btn-container {
             display: flex;
             width: 40%;
-            vertical-align: middle;
+            place-content: center center;
             padding: 10px 20px;
         }
 
@@ -70,6 +70,21 @@
             top: 10px;
             right: 20px;
             transform: rotate(-45deg);
+        }
+
+        @media screen and (max-width: 955px) {
+                
+            #opt-out--container {
+                flex-wrap: wrap;
+            }
+
+            #opt-out--text {
+                width: 100%;
+            }
+
+            #opt-out--btn-container {
+                width: 100%;
+            }
         }
     </style>
 </head>
