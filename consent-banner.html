@@ -120,7 +120,7 @@
     const optOutBtnCtn = document.querySelector('#opt-out--btn-container');
     const optOutClose = document.querySelector('#opt-out--close');
     let optOutCookie = Cookies.get("opt_out_cookie") != null ? JSON.parse(Cookies.get("opt_out_cookie")) : null;
-console.log(optOutCookie)
+
     if(optOutCookie == null) {
         optOutCtn.style.display = "flex"
     } 
@@ -133,15 +133,12 @@ console.log(optOutCookie)
         if(e.target.attributes.data.value == 'decline') {
             Cookies.set('opt_out_cookie', true, { expires: 183})
             optOutCtn.style.display = "none"
-            console.log('now declined')
         } else if(e.target.attributes.data.value == 'accept') {
             Cookies.set('opt_out_cookie', false, { expires: 183})
             optOutCtn.style.display = "none"
-            console.log('now accepted')
         } else if(e.target.attributes.data.value == 'close') {
             Cookies.set('opt_out_cookie', false, { expires: 183})
             optOutCtn.style.display = "none"
-            console.log('now closed')
         } else {
             return
         }
