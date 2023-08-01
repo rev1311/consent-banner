@@ -107,7 +107,7 @@
             <div id="opt-out--acceptbtn" class="opt-out--button" data="accept">accept</div>
             <div id="opt-out--declinebtn" class="opt-out--button" data="decline">decline</div>
         </div>
-        <div id="opt-out--close">+</div>
+        <div id="opt-out--close" data="close">+</div>
     </div>
 
 
@@ -125,8 +125,10 @@ console.log(optOutCookie)
         optOutCtn.style.display = "flex"
     } 
 
-    optOutBtnCtn.addEventListener('click', e => {
+    optOutCtn.addEventListener('click', e => {
         e.preventDefault()
+
+        if(!e.target.attributes.data) return
 
         if(e.target.attributes.data.value == 'decline') {
             Cookies.set('opt_out_cookie', true, { expires: 183})
@@ -136,6 +138,10 @@ console.log(optOutCookie)
             Cookies.set('opt_out_cookie', false, { expires: 183})
             optOutCtn.style.display = "none"
             console.log('now accepted')
+        } else if(e.target.attributes.data.value == 'close') {
+            Cookies.set('opt_out_cookie', false, { expires: 183})
+            optOutCtn.style.display = "none"
+            console.log('now closed')
         } else {
             return
         }
